@@ -3,8 +3,27 @@ import {TemperatureScale} from '../util/constants.js'
 
 class Boilwater extends React.Component{
     render(){
+        let currentTemperature = this.props.tempa
         return (
-             <p> The water will {this.props.tempa>100?' boil' : ' not boil'}!</p>
+             <p> The water will {currentTemperature>=100 ? 'boil' : 'not boil'}!</p>
+        );
+    }
+}
+
+class TemperatureInput extends React.Component{
+    constructor(props){
+        super(props);
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(e){
+        this.props.onHandleTemperature(e.target.value);
+    }
+
+    render(){
+        const tempa = this.props.temperature;
+        return (
+                <input className="form-control" type='text' value={tempa} onChange={this.handleChange}/>
         );
     }
 }
@@ -74,24 +93,6 @@ class Calc extends React.Component{
                      <Boilwater tempa={cel} />
                 </div>
             </form>           
-        );
-    }
-}
-
-class TemperatureInput extends React.Component{
-    constructor(props){
-        super(props);
-        this.handleChange = this.handleChange.bind(this);
-    }
-
-    handleChange(e){
-        this.props.onHandleTemperature(e.target.value);
-    }
-
-    render(){
-        const tempa = this.props.temperature;
-        return (
-                <input className="form-control" type='text' value={tempa} onChange={this.handleChange}/>
         );
     }
 }
