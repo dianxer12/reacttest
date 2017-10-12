@@ -23,7 +23,10 @@ class TemperatureInput extends React.Component{
     render(){
         const tempa = this.props.temperature;
         return (
-                <input className="form-control" type='text' value={tempa} onChange={this.handleChange}/>
+                <div>
+                    <label>{this.props.label}</label>
+                    <input className="form-control" type='text' value={tempa} onChange={this.handleChange}/>
+                </div>
         );
     }
 }
@@ -60,7 +63,7 @@ class Calc extends React.Component{
     handleCelsiusChange(tempa){
         this.setState({scale:'c',temperature:tempa});
         if(isNaN(parseFloat(tempa))&&tempa!=='')
-            throw new Error('wrong value entered in the Celsius field, need to be a number!')
+            return ''
         
     }
 
@@ -71,16 +74,25 @@ class Calc extends React.Component{
         return Calc.TemperatureConvert()[scale](temperature,scale);
     }
 
-    render(){
+    render(){      
         const temperature = this.state.temperature;
         const cel = this.state.scale === 'c' ? this.state.temperature : this.tryConvert(temperature,TemperatureScale.CELSIUS);
         const fah = this.state.scale === 'f' ? this.state.temperature : this.tryConvert(temperature,TemperatureScale.FAHRENHEIT);
+        const testArrays = [
+            {label:'fahrenheit',scale:'f',temperature:cel,onHandleTemperature:this.handleFahrenheitChange},
+            {label:'celsius',scale:'c',temperature:fah,onHandleTemperature:this.handleCelsiusChange}
+        ]
         return (
             <form>
-                <div className="form-group row">
+                {
+                    testArrays.map((v) => (
+                        <TemperatureInput key={v.label} {...v} />
+                    ))
+                }
+                {/* <div className="form-group row">
                     <label  className="col-sm-2 col-form-label">Celsius</label>
                     <div className="col-sm-10">
-                        <TemperatureInput scale="c" temperature={cel} onHandleTemperature={this.handleCelsiusChange}/>
+                        <TemperatureInput {...this.state}onHandleTemperature={this.handleCelsiusChange}/>
                     </div>
                 </div>
                 <div className="form-group row"> 
@@ -91,7 +103,7 @@ class Calc extends React.Component{
                 </div>
                 <div>    
                      <Boilwater tempa={cel} />
-                </div>
+                </div> */}
             </form>           
         );
     }
