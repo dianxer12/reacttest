@@ -70,6 +70,7 @@ class App extends React.Component{
             onMenuClick:  (id) =>{
                 let mappingItem = newMenu.items.find((item) => item.id === id);
                 console.log('hello ', mappingItem ? mappingItem.text : 'item is not found');
+                
             }
         };
         [1,2,3,4,5].forEach((i) => newMenu.items.push(menu('test'+i)));
