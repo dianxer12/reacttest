@@ -8,4 +8,4 @@ const menu = (text,link='#',active='false') => {
     };
 }
 
-export default menu
+export {menu}
