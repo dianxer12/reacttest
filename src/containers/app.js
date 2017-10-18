@@ -1,5 +1,6 @@
 import React from 'react'
-import {Layout,Header} from '../components'
+import {Layout} from '../components'
+import {Header} from '.'
 
 class App extends React.Component{
     render(){
