@@ -1,5 +1,5 @@
 let id=0;
-const menu = (text,link='#',active='false') => {
+const menu = (text,link='#',active=false) => {
     return {
         id: id++,
         text,

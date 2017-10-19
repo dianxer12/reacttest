@@ -25,7 +25,12 @@ class Header extends React.Component{
     
     render() {
         return (
-          <Menu items={this.state.items} onMenuClick={(id) => this.handleMenuItemClick(id)} />
+            <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark" id={this.props.name +'-nav'}>
+                <a className="navbar-brand" href={"#" + this.props.name} id={this.props.name +'-navbrand'}>Dashboard</a>
+                <div className="collapse navbar-collapse">
+                    <Menu items={this.state.items} onMenuClick={(id) => this.handleMenuItemClick(id)} styleClass={'navbar-nav mr-auto'}/>
+                </div>
+            </nav>
         );
     }
 }

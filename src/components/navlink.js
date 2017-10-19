@@ -1,10 +1,10 @@
 import React from 'react'
-const MenuItem = ({active,text,link,onItemClick}) => (
+const MenuItem = ({active,text,link,onItemClick,styleClass}) => (
     <li 
-        className={active ?"nav-item active" :"nav-item"  }        
+        className={styleClass}        
     >
         <a 
-        className="nav-link" 
+            className="nav-link" 
             href={link}
             onClick={e=>{e.preventDefault();
                         onItemClick()
