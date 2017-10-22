@@ -1,4 +1,5 @@
 import React from 'react'
+<<<<<<< HEAD
 
 
 class MenuItem extends React.Component{
@@ -29,5 +30,23 @@ class MenuItem extends React.Component{
         )
     }
 }
+=======
+const MenuItem = ({active,text,link,onItemClick,styleClass}) => (
+    <li 
+        className={styleClass}        
+    >
+        <a 
+            className="nav-link" 
+            href={link}
+            onClick={e=>{e.preventDefault();
+                        onItemClick()
+            }}
+        >
+            {text} 
+        </a>
+       
+    </li>
+);
+>>>>>>> f25130ff7d7d2e3382c97a08fb1c5f08e4f52523
 
 export default MenuItem

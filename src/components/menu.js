@@ -12,25 +12,22 @@ import MenuItem from './navlink.js'
  * 
  * onMenuClick:  function 
  */
-const Menu = ({name,items,onMenuClick}) => {
+const Menu = ({name,items,onMenuClick,styleClass}) => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark" id={name +'-nav'}>
-            <a className="navbar-brand" href="#" id={name +'-navbrand'}>Dashboard</a>
-            <div className="collapse navbar-collapse">
-                <ul className="navbar-nav">
-                    {
-                        items.map(item => (
-                            <MenuItem 
-                                key={item.id} {...item} 
-                                onItemClick={() => onMenuClick(item.id)} />
-                        ))
-                    }
-                </ul>
-            </div>
-        </nav>
+        
+            <ul className={styleClass}>
+                {
+                    items.map(item => (
+                        <MenuItem 
+                            key={item.id} {...item} 
+                            onItemClick={() => onMenuClick(item.id)} 
+                            styleClass={item.active ? "nav-item active" :"nav-item" }/>
+                    ))
+                }
+            </ul>
     );
 }
 
 
 
-export {Menu,MenuItem}
+export default Menu

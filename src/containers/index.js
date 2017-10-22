@@ -1,3 +1,2 @@
-import App from './app.js'
-import Header from './header.js'
-export  {App,Header}
+import ApplicationMenu from './appmenu.js'
+export {ApplicationMenu}
