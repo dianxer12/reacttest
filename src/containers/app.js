@@ -5,7 +5,7 @@ import {Header} from '.'
 class App extends React.Component{
     render(){
         return (
-            <Layout header={<Header/>}/>
+            <Layout header={<Header/>} sidebar = {<Header/>}/>
         );
     }
 }
