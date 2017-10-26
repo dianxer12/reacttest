@@ -1,28 +1,35 @@
 import React from 'react'
-<<<<<<< HEAD
+import PropTypes from 'prop-types'
 
+const proptypes = {
+    id: PropTypes.number.isRequired,
+    handleClick: PropTypes.func.isRequired,
+    styleClass: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired
+};
 
-class MenuItem extends React.Component{
+class MenuItem extends React.Component{   
     constructor(props){
         super(props)
         this.onClick = this.onClick.bind(this)
     }
+    
     onClick(){
-        const {id,activateMenuItem} = this.props
-        activateMenuItem(id)
+        let {id,handleClick} = this.props
+        handleClick(id)    
     }
+    
     render(){
-        const {active,text,link,onItemClick} = this.props
+        const {text,link,styleClass} = this.props
         return (
             <li 
-                className={active ?"nav-item active" :"nav-item"  }        
+                className={styleClass}        
             >
                 <a 
                     className="nav-link" 
                     href={link}
-                    onClick={e=>{e.preventDefault();
-                                onItemClick()
-                    }}
+                    onClick={this.onClick}
                 >
                     {text} 
                 </a>     
@@ -30,23 +37,8 @@ class MenuItem extends React.Component{
         )
     }
 }
-=======
-const MenuItem = ({active,text,link,onItemClick,styleClass}) => (
-    <li 
-        className={styleClass}        
-    >
-        <a 
-            className="nav-link" 
-            href={link}
-            onClick={e=>{e.preventDefault();
-                        onItemClick()
-            }}
-        >
-            {text} 
-        </a>
-       
-    </li>
-);
->>>>>>> f25130ff7d7d2e3382c97a08fb1c5f08e4f52523
+
+
+MenuItem.proptypes = proptypes
 
 export default MenuItem

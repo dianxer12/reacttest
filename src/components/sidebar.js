@@ -1,23 +1,4 @@
 import React from 'react'
-<<<<<<< HEAD
-import MenuItem from './navlink.js'
-
-
-const Sidebar = ({items,onMenuClick}) => {
-    return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            {items.map((item) => <MenuItm 
-                                    key={item.id} 
-                                    href={item.link} 
-                                    id={item.id}
-                                    active={item.active}
-                                    text={item.text}
-                                />
-            )}
-        </nav>
-    );
-}
-=======
 import {Menu} from '.'
 import {buildDefaultMenu} from '../reducers'
 //import {connect} from 'react-redux'
@@ -50,4 +31,3 @@ class Sidebar extends React.Component{
 }
 
 export default Sidebar
->>>>>>> f25130ff7d7d2e3382c97a08fb1c5f08e4f52523

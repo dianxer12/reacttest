@@ -1,2 +1,2 @@
-import {TemperatureScale,MenuActionType} from './constants.js'
-export {TemperatureScale,MenuActionType}
+import {TemperatureScale,MenuActionType,Position} from './constants.js'
+export {TemperatureScale,MenuActionType,Position}
