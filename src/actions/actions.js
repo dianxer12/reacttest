@@ -1,4 +1,3 @@
-import {getHeaderMenus} from '../selector/entity.js'
 import {MenuActionType} from '../util'
 
 let id=0;
@@ -11,21 +10,23 @@ export const menu = (text,link='#',active=false) => {
     };
 }
 
-export const initMenu = () => (dispatch,getState) =>{
-    const state = getState()
-    const items = getHeaderMenus(state)
+export const initMenu = () => (dispatch) => {
     dispatch({
         type: MenuActionType.INIT,
         labels: []
     })
-}
+}    
 
 export const activateMenuItem = (id,position) => (dispatch,getState) => {
-    const state = getState()
-    const items = getHeaderMenus(state)
     dispatch({
         type: MenuActionType.ACTIVIATE,        
         id,
         position
     })
 }
+
+export const buildDefaultMenu = (items=[]) => (
+    items.map(
+        (item) => (menu(item))
+    )
+)

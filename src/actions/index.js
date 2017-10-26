@@ -1,2 +1,2 @@
-import {menu,activateMenuItem,initMenu} from './actions.js'
-export {menu,activateMenuItem,initMenu} 
+import {menu,activateMenuItem,initMenu,buildDefaultMenu} from './actions.js'
+export {menu,activateMenuItem,initMenu,buildDefaultMenu} 

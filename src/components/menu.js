@@ -10,24 +10,27 @@ const propTypes = {
     })).isRequired,
     position: PropTypes.string.isRequired,
     activeItem: PropTypes.number.isRequired,
-    activateMenuItem: PropTypes.func.isRequired
-}   
+    activateMenuItem: PropTypes.func.isRequired,
+    initMenu: PropTypes.func.isRequired
+};
 
-const Menu = ({items,activateMenuItem,activeItem,position}) => {
-    return (
-            <ul className={styleClass}>
+class Menu extends React.Component{
+    render(){
+        const {items,activateMenuItem,activeItem,position} = this.props
+        return (
+            <ul className="navbar-nav mr-auto">
                 {
                     items.map(item => (
                         <MenuItem 
                             key={item.id} {...item} 
                             handleClick={(id) => activateMenuItem(id,position)}
-                            styleClass={activeItem == item.id ? 'nav-item active' : 'nav-item'}/>
+                            styleClass={activeItem === item.id ? 'nav-item active' : 'nav-item'}/>
                     ))
                 }
             </ul>
-    );
+        )
+    }
 }
+Menu.propTypes = propTypes;
 
-Menu.propTypes = propTypes
-
-export default Menu
+export default Menu;

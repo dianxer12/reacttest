@@ -1,2 +1,7 @@
 import {header} from './composemenu.js'
-export {header}
+import {combineReducers} from 'redux'
+
+const rootReducer = combineReducers({
+    header
+})
+export default rootReducer

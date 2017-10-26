@@ -1,9 +1,23 @@
 import React from 'react'
+import {App} from './components'
+import configureStore from './store/ConfigureStore'
 import { render } from 'react-dom'
-import {App} from './containers'
+import { Provider } from 'react-redux'
+import {buildDefaultMenu} from './actions'
 
+const initialState = {
+  header: {
+    menu:{
+      items: buildDefaultMenu(['Dashboard','Home','Solution','About Us']),
+      activeItem: ''
+    }
+    
+  }
+}
 
-    render(
-        <App />,
-        document.getElementById('root')
-    )
+render(
+    <Provider store={configureStore(initialState)}>
+      <App />
+    </Provider>,
+    document.getElementById('root')
+  )

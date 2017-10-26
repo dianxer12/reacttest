@@ -4,4 +4,4 @@ import Layout from './layout.js'
 import Header from './header.js'
 import App from './app.js'
 
-export {App,Layout,Header,Sidebar,Menu,MenuItem}
+export {App,Layout,Header,Menu,MenuItem}

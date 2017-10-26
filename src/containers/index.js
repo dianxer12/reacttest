@@ -1,2 +1,2 @@
-import ApplicationMenu from './appmenu.js'
-export {ApplicationMenu}
+import MenuContainer from './MenuContainer.js'
+export {MenuContainer}
