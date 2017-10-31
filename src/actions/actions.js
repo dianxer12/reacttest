@@ -10,7 +10,7 @@ export const menu = (text,link='#',active=false) => {
     };
 }
 
-export const initMenu = () => (dispatch) => {
+export const resetMenu = () => (dispatch) => {
     dispatch({
         type: MenuActionType.INIT,
         labels: []
@@ -27,6 +27,6 @@ export const activateMenuItem = (id,position) => (dispatch,getState) => {
 
 export const buildDefaultMenu = (items=[]) => (
     items.map(
-        (item) => (menu(item))
+        (item) => menu(item)
     )
 )

@@ -4,14 +4,13 @@ import PropTypes from 'prop-types'
 
 const propTypes = {
     items: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.number.isRequired,
+        id: PropTypes.string.isRequired,
         text: PropTypes.string.isRequired,
         link: PropTypes.string.isRequired
     })).isRequired,
     position: PropTypes.string.isRequired,
     activeItem: PropTypes.number.isRequired,
-    activateMenuItem: PropTypes.func.isRequired,
-    initMenu: PropTypes.func.isRequired
+    activateMenuItem: PropTypes.func.isRequired
 };
 
 class Menu extends React.Component{

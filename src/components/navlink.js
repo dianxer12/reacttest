@@ -21,7 +21,7 @@ class MenuItem extends React.Component{
     }
     
     render(){
-        const {text,link,styleClass} = this.props
+        const {text,link,styleClass,children} = this.props
         return (
             <li 
                 className={styleClass}        
@@ -32,7 +32,8 @@ class MenuItem extends React.Component{
                     onClick={this.onClick}
                 >
                     {text} 
-                </a>     
+                </a>    
+                {children} 
             </li>
         )
     }
