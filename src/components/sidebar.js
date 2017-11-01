@@ -12,10 +12,6 @@ class Sidebar extends React.Component{
         this.handleMenuItemClick = this.handleMenuItemClick.bind(this)
     }
     
-    componentDidMount(){
-        this.setState({items:buildDefaultMenu(['Analysis','Report','Weekly','Monthly','Daily','Yearly'])})
-    }
-    
     handleMenuItemClick(id){
         const items = this.state.items
         this.setState(items.map((item) => item.id===id ? item.active=true : item.active=false))
