@@ -1,12 +1,9 @@
 import {MenuActionType} from '../util'
+import {buildDefaultMenu} from '../actions'
 
 const initialState = {
     activeItem: '',
-    items: [{
-        id: '',
-        text:'',
-        to: ''
-    }]
+    items: buildDefaultMenu(['Dashboard','Home','Solution','About Us'])
 }
 
 const header = (state=initialState,action) => {

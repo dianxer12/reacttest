@@ -1,6 +1,7 @@
 import React from 'react'
 import MenuItem from './navlink.js'
 import PropTypes from 'prop-types'
+import {Position} from '../util'
 
 const propTypes = {
     items: PropTypes.arrayOf(PropTypes.shape({
@@ -17,7 +18,7 @@ class Menu extends React.Component{
     render(){
         const {items,activateMenuItem,activeItem,position} = this.props
         return (
-            <ul className="navbar-nav mr-auto">
+            <ul className={position===Position.HEADER ? "navbar-nav mr-auto" : 'nav nav-pills flex-column'}>
                 {
                     items.map(item => (
                         <MenuItem 

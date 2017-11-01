@@ -1,14 +1,10 @@
 import {MenuActionType} from '../util'
+import {buildDefaultMenu} from '../actions'
 
 const initialState = {
     activeItem: '',
-    items: [{
-        id: '',
-        text:'',
-        to: ''
-    }]
+    items: buildDefaultMenu(['Weekly','Monthly','Yearly'])
 }
-
 const sidebar = (state=initialState,action) => {
     switch(action.type){
         case MenuActionType.ACTIVIATE:

@@ -1,12 +1,11 @@
 import {MenuActionType} from '../util'
 
 let id=0;
-export const menu = (text,link='#',active=false) => {
+export const menu = (text,link='#') => {
     return {
         id: id++,
         text,
         link,
-        active
     };
 }
 

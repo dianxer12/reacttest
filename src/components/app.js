@@ -1,11 +1,13 @@
 import React from 'react'
 import {Layout} from '../components'
-import {Header} from '.'
+import {MenuContainer} from '../containers'
+import {Position} from '../util'
+
 
 class App extends React.Component{
     render(){
         return (
-            <Layout header={<Header/>}/>
+            <Layout header={<MenuContainer position={Position.HEADER}/>} sidebar={<MenuContainer position={Position.LEFTSIDE}/>} />
         );
     }
 }
