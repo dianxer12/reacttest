@@ -7,7 +7,10 @@ import {Position} from '../util'
 class App extends React.Component{
     render(){
         return (
-            <Layout header={<MenuContainer position={Position.HEADER}/>} sidebar={<MenuContainer position={Position.LEFTSIDE}/>} />
+            <Layout 
+                header={<MenuContainer position={Position.HEADER}/>}
+                sidebar={<MenuContainer position={Position.LEFTSIDE}/>}
+            />
         );
     }
 }

@@ -14,7 +14,13 @@ const Layout = ({header,sidebar}) => (
                 <nav className="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
                     {sidebar}
                 </nav>
-            </div>        
+            </div>
+            <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+                <h1>Dashboard</h1>
+                <section row text-center placeholders>
+                </section>
+                
+            </main>        
          </div> 
     </div>
     )
